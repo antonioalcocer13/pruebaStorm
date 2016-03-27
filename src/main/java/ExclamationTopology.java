@@ -5,9 +5,6 @@ import backtype.storm.StormSubmitter;
 import backtype.storm.LocalCluster;
 import backtype.storm.utils.Utils;
 
-/**
- * Created by antonio on 27/03/16.
- */
 
 public class ExclamationTopology {
 

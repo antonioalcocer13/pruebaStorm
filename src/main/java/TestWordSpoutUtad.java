@@ -13,9 +13,6 @@ import java.util.Map;
 import java.util.Random;
 
 
-/**
- * Created by antonio on 27/03/16.
- */
 public class TestWordSpoutUtad  extends BaseRichSpout {
     boolean _isDistributed;
     SpoutOutputCollector _collector;
@@ -37,12 +34,11 @@ public class TestWordSpoutUtad  extends BaseRichSpout {
     }
 
     public void nextTuple() {
-        Utils.sleep(100);
-        final String[] words = new String[] {"Antonio", "Jorge", "Marta", "Belen", "Nacho",
-                "Elia", "Johanna", "Raul", "Manuel", "Guillermo", "Tamara"};
-        final Random rand = new Random();
-        final String word = words[rand.nextInt(words.length)];
-        _collector.emit(new Values(word));
+        /**********************************************************************************
+         *
+         * Poner aquí la implementación de lo que queremos hacer con la siguiente tupla
+         *
+         *********************************************************************************/
     }
 
     public void ack(Object msgId) {
