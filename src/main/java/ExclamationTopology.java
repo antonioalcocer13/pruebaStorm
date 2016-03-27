@@ -14,27 +14,23 @@ public class ExclamationTopology {
 
 
     public static void main(String[] args) throws Exception {
-        TopologyBuilder builder = new TopologyBuilder();
+        /**************************************************************************************
+         *
+         * poner la descripción de la topología
+         * Que bolts y spout y desde donde vienen unos y a donde van a parar los otros...
+         *
+         * ***********************************************************************************/
 
-        builder.setSpout("word", new TestWordSpout(), 10);
-        builder.setBolt("exclaim1", new ExclamationBolt(), 3).shuffleGrouping("word");
-        builder.setBolt("exclaim2", new ExclamationBolt(), 2).shuffleGrouping("exclaim1");
+        /**************************************************************************************
+         *
+         * Poner la configuración
+         *
+         **************************************************************************************/
 
-        Config conf = new Config();
-        conf.setDebug(true);
-
-        if (args != null && args.length > 0) {
-            conf.setNumWorkers(3);
-
-            StormSubmitter.submitTopology(args[0], conf, builder.createTopology());
-        }
-        else {
-
-            LocalCluster cluster = new LocalCluster();
-            cluster.submitTopology("test", conf, builder.createTopology());
-            Utils.sleep(10000);
-            cluster.killTopology("test");
-            cluster.shutdown();
-        }
+        /**************************************************************************************
+         *
+         * Poner la descripción del clúster (como se lanzará en modo local
+         *
+         **************************************************************************************/
     }
 }
