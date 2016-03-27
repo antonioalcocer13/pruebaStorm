@@ -34,7 +34,7 @@ public class TestWordSpoutUtad  extends BaseRichSpout {
     }
 
     public void nextTuple() {
-        /**********************************************************************************
+        /*********************************************************************************
          *
          * Poner aquí la implementación de lo que queremos hacer con la siguiente tupla
          *
