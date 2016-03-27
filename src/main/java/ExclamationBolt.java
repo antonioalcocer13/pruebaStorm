@@ -8,12 +8,6 @@ import backtype.storm.tuple.Values;
 
 import java.util.Map;
 
-/**
- * Created by antonio on 27/03/16.
- */
-
-
-
 public class ExclamationBolt extends BaseRichBolt {
 
     OutputCollector _collector;
