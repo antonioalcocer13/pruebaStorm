@@ -25,7 +25,7 @@ public class ExclamationBolt extends BaseRichBolt {
 
     @Override
     public void execute(Tuple tuple) {
-        _collector.emit(tuple, new Values(tuple.getString(0) + "!!!"));
+        _collector.emit(tuple,  new Values("¡¡¡" + tuple.getString(0) + "!!!"));
         _collector.ack(tuple);
     }
 
